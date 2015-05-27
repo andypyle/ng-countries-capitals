@@ -1,5 +1,5 @@
-var app = angular.module('countriesCapitals', ['ngRoute']);
+var app = angular.module('countriesCapitals', ['ngRoute', 'GeonamesApi']);
 
 app.controller('mainCtrl', function($scope){
-	$scope.main = 'Hey!';
+	
 });

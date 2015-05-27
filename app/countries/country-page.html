@@ -1,1 +1,10 @@
-<h2>{{ country }}</h2>
+<h2>{{ capital.countryName }}</h2>
+<p><strong>Neighbors:</strong> {{ neighborsCount }}</p>
+
+<ul>
+	<li ng-repeat="neighbor in neighbors">
+		{{ neighbor.countryName }}
+	</li>
+</ul>
+
+<p><strong>Capital:</strong> {{ capital.toponymName }}</p>

@@ -1,1 +1,21 @@
-<h1>Countries List</h1>
+<h2>List of Countries</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<td><h3>Name</h3></td>
+			<td><h3>Code</h3></td>
+			<td><h3>Capital</h3></td>
+			<td><h3>Population</h3></td>
+			<td><h3>More</h3></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="country in countryList">
+			<td>{{ country.countryName }}</td>
+			<td>{{ country.countryCode }}</td>
+			<td>{{ country.capital }}</td>
+			<td>{{ country.population | number }}</td>
+			<td><a ng-href="/app/#!/countries/{{ country.countryCode }}">GO</a></td>
+		</tr>
+	</tbody>
+</table>

@@ -1,5 +1,5 @@
 app.config(function($locationProvider, $routeProvider){
-	$locationProvider.hashPrefix('!')
+	
 
 	$routeProvider.when('/', {
 		templateUrl : 'home/home.html',
@@ -9,12 +9,12 @@ app.config(function($locationProvider, $routeProvider){
 		templateUrl : 'countries/countries-list.html',
 		controller : 'countriesCtrl'
 	})
-	.when('/countries/:country', {
+	.when('/countries/:countryCode', {
 		templateUrl : 'countries/country-page.html',
-		controller : 'countriesCtrl',
+		controller : 'countryCtrl',
 		resolve: {
-			country: function($route){
-				var country = $route.current.params.country;
+			countryCode: function($route){
+				var country = $route.current.params.countryCode;
 				return country;
 			}
 		}
@@ -23,5 +23,6 @@ app.config(function($locationProvider, $routeProvider){
 		redirectTo : '/'
 	});
 
+	$locationProvider.hashPrefix('!');
 	$locationProvider.html5Mode(true);
 });
