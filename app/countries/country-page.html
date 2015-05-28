@@ -1,10 +1,72 @@
-<h2>{{ capital.countryName }}</h2>
-<p><strong>Neighbors:</strong> {{ neighborsCount }}</p>
-
-<ul>
-	<li ng-repeat="neighbor in neighbors">
-		{{ neighbor.countryName }}
-	</li>
-</ul>
-
-<p><strong>Capital:</strong> {{ capital.toponymName }}</p>
+<div ng-if="loading.length < 2" class="loader"><i class="fa fa-spinner fa-spin fa-5x"></i></div>
+<div ng-hide="loading.length < 2" class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2>{{ capital.countryName }}</h2>
+				</div>		
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-right">
+					<p><strong>Population of country:</strong></p>
+				</div>
+				<div class="col-sm-6">
+					<p>{{ country.population | number }}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-right">
+					<p><strong>Area:</strong></p>
+				</div>
+				<div class="col-sm-6">
+					<p>{{ country.areaInSqKm | number }} square km</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-right">
+					<p><strong>Capital:</strong></p>
+				</div>
+				<div class="col-sm-6">
+					<p>{{ capital.toponymName }}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-right">
+					<p><strong>Population of capital:</strong></p>
+				</div>
+				<div class="col-sm-6">
+					<p>{{ capital.population | number }}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-right">
+					<p><strong><em>{{ neighborsCount }}</em> Neighbors:</strong></p>
+				</div>
+				<div class="col-sm-6">
+					<ul class="neighborsList">
+						<li ng-repeat="neighbor in neighbors">
+							<a ng-href="/app/#/countries/{{neighbor.countryCode}}" class="btn btn-primary btn-sm">
+								{{ neighbor.countryName }}
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<img ng-src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png" class="img-responsive" />
+				</div>
+				<div class="col-sm-6">
+					<img ng-src="http://www.geonames.org/flags/x/{{country.countryCode | lowercase}}.gif" class="img-responsive" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row bottomButtons">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-6 text-center"><a href="/app" class="btn btn-success myBtn btn-block">Home</a></div>
+			<div class="col-sm-6 text-center"><a href="/app/#/countries/" class="btn btn-success myBtn btn-block">Browse</a></div>
+		</div>
+	</div>
+</div>

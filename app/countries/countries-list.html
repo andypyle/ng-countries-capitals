@@ -1,6 +1,7 @@
 <h2>List of Countries</h2>
-<table class="table">
-	<thead>
+<div ng-if="loading" class="loader"><i class="fa fa-spinner fa-spin fa-5x"></i></div>
+<table class="table" ng-show="!loading">
+	<thead >
 		<tr>
 			<td><h3>Name</h3></td>
 			<td><h3>Code</h3></td>
@@ -15,7 +16,7 @@
 			<td>{{ country.countryCode }}</td>
 			<td>{{ country.capital }}</td>
 			<td>{{ country.population | number }}</td>
-			<td><a ng-href="/app/#!/countries/{{ country.countryCode }}">GO</a></td>
+			<td><a ng-href="/app/#/countries/{{ country.countryCode }}">GO</a></td>
 		</tr>
 	</tbody>
 </table>

@@ -5,7 +5,7 @@ app.config(function($locationProvider, $routeProvider){
 		templateUrl : 'home/home.html',
 		controller : 'mainCtrl'
 	})
-	.when('/countries', {
+	.when('/countries/', {
 		templateUrl : 'countries/countries-list.html',
 		controller : 'countriesCtrl'
 	})
@@ -19,10 +19,13 @@ app.config(function($locationProvider, $routeProvider){
 			}
 		}
 	})
+	.when('/error', {
+		templateUrl : 'errors/error.html'
+	})
 	.otherwise({
-		redirectTo : '/'
+		redirectTo : '/error'
 	});
 
-	$locationProvider.hashPrefix('!');
-	$locationProvider.html5Mode(true);
+	//$locationProvider.hashPrefix('!');
+	$locationProvider.html5Mode(false);
 });
