@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="countriesCapitals">
 <head>
-	<base href="/app/">
+	<base href="/">
 	<meta charset="UTF-8">
 	<title>Countries & Capitals</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/sandstone/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- build:css ./_assets/combined.css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap-theme-sandstone/sandstone.min.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/style.css">
+	<!-- endbuild -->
 </head>
 <body ng-controller="mainCtrl">
 	<header class="container text-center">
@@ -19,7 +22,8 @@
 
 	</main>
 
-	
+	<!-- build:js ./_assets/combined.js -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
 
@@ -30,5 +34,6 @@
 
 	<script src="countries/countries-list.js"></script>
 	<script src="countries/country-page.js"></script>
+	<!-- endbuild -->
 </body>
 </html>
